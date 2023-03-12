@@ -128,16 +128,24 @@
             <div class="title">Отзывы</div>
             <div class="reviews__videos">
                 <div class="reviews__video">
-                    <video src="/video/1.MP4" preload="true" loop="loop" volume="0" class="reviews-video"></video>
-                    <div class="reviews__play">Смотреть видео</div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IsJhy-5o1AE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    <img src="" alt="">
                 </div>
                 <div class="reviews__video">
-                    <video src="/video/2.MOV" preload="true" loop="loop" volume="0" class="reviews-video"></video>
-                    <div class="reviews__play">Смотреть видео</div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lJnZPNxGTCU?enablejsapi=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
                 <div class="reviews__video">
-                    <video src="/video/3.MP4" preload="true" loop="loop" volume="0" class="reviews-video"></video>
-                    <div class="reviews__play">Смотреть видео</div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8_KOibnpKM4?enablejsapi=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+
                 </div>
             </div>
             <div class="content_scroll">
@@ -231,8 +239,10 @@
     </script>
     <div class="modal-video">
         <div class="modal-video__video">
-            <video src="/video/1.MP4" controls preload="true" loop="loop" volume="0"
-                class="modal-video__video2"></video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8ICeOvbiZMI?enablejsapi=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
         </div>
         <a href="https://api.whatsapp.com/send?phone=79189822720" class="modal-video__btn">
             Написать Марии
@@ -251,15 +261,15 @@
         </div>
     </div>
     <script>
-        let videos = document.querySelectorAll('.reviews-video');
-        let videosBtns = document.querySelectorAll('.reviews__play');
-        for (let i = 0; i < videosBtns.length; i++) {
-            videosBtns[i].addEventListener('click', () => {
-                videos[i].setAttribute('controls', '');
-                videos[i].play();
-                videosBtns[i].classList.add('active');
-            });
-        };
+        /*         let videos = document.querySelectorAll('.reviews-video');
+                let videosBtns = document.querySelectorAll('.reviews__play');
+                for (let i = 0; i < videosBtns.length; i++) {
+                    videosBtns[i].addEventListener('click', () => {
+                                        videos[i].setAttribute('controls', ''); 
+                        videos[i].postMessage('{"event": "command", "func": "playVideo", "args": ""}', "*");
+                        videosBtns[i].classList.add('active');
+                    });
+                }; */
         document.querySelector('.modal-video').addEventListener('click', () => {
             if (document.querySelector('.modal-video').classList.contains('active') == false) {
                 console.log(document.querySelector('.modal-video').classList.contains('active'));
@@ -267,7 +277,7 @@
                 document.querySelector('.modal-video').classList.add('active');
                 document.querySelector('.modal-video__shadow').classList.add('active');
                 document.querySelector('.modal-video__close').classList.add('active');
-                document.querySelector('.modal-video__video2').play()
+                document.querySelector('.modal-video__video2').src += "&autoplay=1";
                 setTimeout(() => {
                     document.querySelector('.modal-video__btn').classList.add('active');
                 }, 100000);
@@ -279,7 +289,7 @@
                 document.querySelector('.modal-video__shadow').classList.remove('active');
                 document.querySelector('.modal-video__btn').classList.remove('active');
                 document.querySelector('.modal-video__close').classList.remove('active');
-                document.querySelector('.modal-video__video > video').pause();
+                document.querySelector('.modal-video__video > video').src += "&autoplay=0";
             }, 100);
         });
         setTimeout(() => {

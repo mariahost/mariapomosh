@@ -920,7 +920,7 @@ justify-content: center;
     position: relative;
     height: 210px;
 }
-.reviews__video video{
+.reviews__video iframe{
   position: absolute;
   left: 0;
   top: 0;
@@ -962,6 +962,7 @@ justify-content: center;
   cursor: pointer;
   user-select: none;
   border-radius: 10px;
+  z-index: 2;
 }
 .reviews__play.active{
   display: none;
@@ -1032,10 +1033,10 @@ justify-content: center;
   position: relative;
   height: 250px;
 }
-.modal-video__video.none video{
+.modal-video__video.none iframe{
   display: none !important;
 } 
-.modal-video__video video{
+.modal-video__video iframe{
   position: absolute;
   left: 0;
   top: 0;
