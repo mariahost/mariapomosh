@@ -1047,6 +1047,12 @@ justify-content: center;
   max-height: 100%;
   border-radius: 10px;
 }
+.modal-video .modal-video__btn{
+  display: none;
+}
+.modal-video.active .modal-video__btn{
+  display: block;
+}
 @media(max-width:1170px){
   .reviews__videos{
     padding: 0 20px;
