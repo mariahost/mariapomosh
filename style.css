@@ -1016,11 +1016,11 @@ justify-content: center;
   display: block;
 }
 .modal-video.active{
-  height: 60vh;
+  height: 45vh;
   width: 20vw;
 }
 .modal-video.active .modal-video__video{
-  height: 60vh;
+  height: 45vh;
 }
 /* .modal-video:hover{
   border: 2px solid rgba(0, 60, 255, 0.8);
@@ -1076,11 +1076,11 @@ justify-content: center;
     height: 150px;
   }
   .modal-video.active{
-    height: 65vh;
+    height: 45vh;
     width: 95vw;
   }
   .modal-video.active .modal-video__video{
-    height: 65vh;
+    height: 45vh;
   }
   .reviews__videos{
     flex-direction: column;
