@@ -1036,7 +1036,7 @@ justify-content: center;
 .modal-video__video.none iframe{
   display: none !important;
 } 
-.modal-video__video iframe{
+.modal-video__video video{
   position: absolute;
   left: 0;
   top: 0;
