@@ -286,7 +286,7 @@
                 document.querySelector('.modal-video__shadow').classList.remove('active');
                 document.querySelector('.modal-video__btn').classList.remove('active');
                 document.querySelector('.modal-video__close').classList.remove('active');
-                document.querySelector('.modal-video__video > video').src += "&autoplay=0";
+                document.querySelector('.modal-video__video > video').pause();
             }, 100);
         });
         setTimeout(() => {
